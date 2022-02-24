@@ -1,0 +1,54 @@
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+ 
+      <h1 class="mainHeader">
+        Twitch Users
+      </h1>
+      <h2 class="subHeader">
+        Search any user on twitch to find their picture, bio, etc.
+      </h2> 
+      <div class="center-button">
+        <input id="toSearch" type="text" placeholder="Twitch Users" />
+          <button onClick='(() => { 
+            let myName = ""
+            axios.get("http://127.0.0.1:5000/user", { params: {name: document.getElementById("toSearch").value }}).then((res) => {
+              let data = res.data.data[0]
+              myName = data.display_name;
+              myProfilePic = data.profile_image_url;
+              myBio = data.description;
+              myBroadcasterType = data.broadcaster_type;
+              myViewCount = data.view_count;
+              myEmail = data.email;
+              myCreated = data.created_at;
+              myBroadCasterID = data.broadcaster_id;
+              myEmotes = data.data;
+              document.getElementById("name").innerHTML = "Name: " + myName;
+              document.getElementById("profilePic").src = myProfilePic;
+              document.getElementById("description").innerHTML = "Bio: " + myBio; 
+              document.getElementById("broadcasterType").innerHTML = "Status: " + myBroadcasterType;
+              document.getElementById("viewCount").innerHTML = "View Count: " + myViewCount;
+              document.getElementById("email").innerHTML = "Email: " + myEmail;
+              document.getElementById("created").innerHTML = "Account created: " + myCreated;
+              document.getElementById("broadcasterID").innerHTML = "Emotes: " + myBroadCasterID;
+              document.getElementById("emotes").src = myEmotes;
+            })
+          })()'>Search</button>
+  
+          <div class="box">
+            <div id="name"></div>
+            <img id="profilePic" src="" /> 
+            <div id="description"> </div> <br>
+            <div id="broadcasterType"></div> <br>
+            <div id="viewCount"></div> <br>
+            <div id="email"></div> <br>
+            <div id="created"></div> <br>
+            <div id="broadcasterID"></div>
+            <div id="emotes"></div>
+          </div>
+
+  </body>
+</html>

@@ -1,0 +1,53 @@
+.mainHeader {
+  color:#6441a5; 
+  font-size: x-large; 
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', 'Arial', 'sans-serif';
+  text-align: center;
+}
+
+.subHeader {
+  color:rgb(103, 82, 180); 
+  font-size:medium;
+  text-align: center;
+}
+input[type=text] {
+  width: 150px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 20px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+/* When the input field gets focus, change its width to 100% */
+input[type=text]:focus {
+  width: 25%;
+}
+.center-button {
+  padding-left: 20rem;
+}
+
+.box {
+  color:#6441a5;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  width: 800px;
+  height: 800px;
+  border: 1px solid black;
+  padding: 2px 4px;
+  overflow-y: scroll;
+  overflow-x: auto;
+ 
+}
+
+.log {
+  margin-top: 8px;
+  font-family: monospace;
+}
+
+
